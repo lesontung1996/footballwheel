@@ -4,6 +4,7 @@ import "./globals.css";
 import StoreProvider from "./StoreProvider";
 import Navigation from "@/components/Navigation";
 import LoadingWrapper from "@/components/LoadingWrapper";
+import Footer from "@/components/Footer";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const quicksand = Quicksand({
@@ -87,6 +88,7 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen">
             <Navigation />
             <LoadingWrapper>{children}</LoadingWrapper>
+            <Footer />
           </div>
         </StoreProvider>
       </body>
