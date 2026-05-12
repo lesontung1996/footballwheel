@@ -94,7 +94,7 @@ export default function SchedulePage() {
   return (
     <>
       {gameWeeks.length > 0 && (
-        <div className="sticky flex items-center top-16 z-10 px-4 py-3 bg-fpl-1200 overflow-x-scroll border-b border-fpl-800">
+        <div className="sticky flex items-center top-16 z-10 px-4 py-3 bg-fpl-1200 overflow-x-auto border-b border-fpl-800">
           <div className="flex flex-nowrap justify-center gap-4 mx-auto">
             {gameWeeks.map((weekMatches, weekIndex) => (
               <a

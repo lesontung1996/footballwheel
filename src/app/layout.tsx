@@ -78,13 +78,13 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <GoogleAnalytics gaId="G-ZVQRFGB3M2" />
       <GoogleTagManager gtmId="GTM-WBR49X3N" />
-      <body className={`${quicksand.variable} antialiased`}>
+      <body className={`${quicksand.variable} antialiased bg-fpl-1200`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <StoreProvider>
-          <div className="flex flex-col min-h-screen bg-fpl-1200">
+          <div className="flex flex-col min-h-screen">
             <Navigation />
             <LoadingWrapper>{children}</LoadingWrapper>
           </div>

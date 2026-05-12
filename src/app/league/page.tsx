@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import CreateGameModal from "@/components/CreateGameModal";
 import DeleteGamesModal from "@/components/DeleteGamesModal";
+import LeagueFaq from "@/components/league/LeagueFaq";
 import { useRouter } from "next/navigation";
 import { clearTeams, setTeams } from "@/store/slices/normalizeTeamSlice";
 import { clearMatches, setMatches } from "@/store/slices/normalizeMatchSlice";
@@ -93,13 +94,27 @@ export default function Home() {
 
   return (
     <>
-      <main className="2xl:container w-full mx-auto p-4">
+      <main className="2xl:container w-full mx-auto p-4 space-y-6">
         <div className="mb-6 space-y-4">
-          <div>
-            <h1 className="text-h1 text-white">Your games</h1>
-            <p className="text-sm text-white/80">
-              Select a game to view its schedule and table, or create a new one.
-            </p>
+          <div className="space-y-2 max-w-2xl">
+            <h1 className="text-h2 text-white">
+              Your Football League. Your Rules.
+            </h1>
+            <ul className="text-sm text-white/80 list-disc pl-5">
+              <li>
+                Set up a round-robin league with friends, family, or your FIFA
+                squad — no account, no app.
+              </li>
+              <li>
+                {" "}
+                Add your teams, generate every fixture automatically, log scores
+                as you play, and watch the standings update in real time.
+              </li>
+              <li>
+                Everything lives in your browser. Close the tab and come back
+                later — it&apos;ll still be there.
+              </li>
+            </ul>
           </div>
           <div className="flex items-center gap-3">
             {games.length > 0 && (
@@ -154,7 +169,13 @@ export default function Home() {
           <div className="rounded-lg bg-fpl-1100 p-6">
             <p className="py-8 text-center text-white/90">
               No games yet. Click{" "}
-              <span className="font-semibold">Create Game</span> to start.
+              <button
+                className="font-semibold"
+                onClick={() => setIsModalOpen(true)}
+              >
+                Create Game
+              </button>{" "}
+              to start.
             </p>
           </div>
         ) : (
@@ -200,6 +221,7 @@ export default function Home() {
             ))}
           </div>
         )}
+        <LeagueFaq />
       </main>
       {isModalOpen && (
         <CreateGameModal onClose={() => setIsModalOpen(false)} games={games} />
