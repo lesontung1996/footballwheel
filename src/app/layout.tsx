@@ -77,7 +77,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <GoogleAnalytics gaId="G-ZVQRFGB3M2" />
+      <GoogleAnalytics gaId="G-LV950BMQBP" />
       <GoogleTagManager gtmId="GTM-WBR49X3N" />
       <body className={`${quicksand.variable} antialiased bg-fpl-1200`}>
         <script
